@@ -1,20 +1,20 @@
 #include  <iostream>     //angular brackets for standard libraries
 						 //double quotes for your own code import	
 #include <string>		//used to allow functions working on a string (cin >> "StringName")
+#include "Header.h"		//should have called main.h (it is a header for main)
 
-using namespace std;	//this allows you to not have to write std:: before every cout
-void printIntro();      //You must "declare" your methods at the top
-bool userGuess();
-bool userCheck(string);
+
 
 int main() {
 	bool loop = true;
 	printIntro();
+
 	while (loop) {
 		loop = userGuess();
 	}
-	return 0;
+	return 0;			//exit application
 }
+
 void printIntro() {
 	constexpr int WORD_LENGTH = 5;
 	//intro the game to the user
@@ -32,6 +32,9 @@ bool userGuess() {
 }
 
 bool userCheck(string Guess) {
+	//check to see what the guess was
+	//if it is the word bye, end the game by returning false
+	//else repeat the guess back to the user
 	if (Guess == "bye") {
 		cout << "You have ended the game\n";
 		return false;
