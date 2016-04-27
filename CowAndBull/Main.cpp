@@ -18,7 +18,7 @@ void printIntro() {
 	constexpr int WORD_LENGTH = 5;
 	//intro the game to the user
 	cout << "Welcome to Bulls and Cows, a fun word game!\n";
-	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";
+	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n\n";
 	return;
 }
 bool userGuess() {
@@ -30,6 +30,6 @@ bool userGuess() {
 		cout << "You have ended the game\n";
 		return false;
 	}
-	cout << "You have guessed '" << Guess << "'\n";
+	cout << "You have guessed '" << Guess << "'\n\n";
 	return true;
 }
