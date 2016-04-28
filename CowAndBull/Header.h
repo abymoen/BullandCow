@@ -6,3 +6,4 @@ void printIntro();      //You must "declare" your methods at the top
 void playGame();
 bool userGuess();
 bool userCheck(string);
+void askToPlayAgain();

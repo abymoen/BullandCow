@@ -8,6 +8,7 @@
 int main() {
 	printIntro();
 	playGame();
+	askToPlayAgain();
 	return 0;			//exit application
 }
 
@@ -26,6 +27,7 @@ void playGame() {
 		loop = userGuess();
 	}
 }
+
 bool userGuess() {
 	//get a guess from the user
 	cout << "Enter your guess: ";
@@ -40,9 +42,28 @@ bool userCheck(string Guess) {
 	//if it is the word bye, end the game by returning false
 	//else repeat the guess back to the user
 	if (Guess == "bye") {
-		cout << "You have ended the game\n";
+		cout << "You have ended the game\n\n";
 		return false;
 	}
 	cout << "You have guessed '" << Guess << "'\n\n";
 	return true;
+}
+
+void askToPlayAgain() {
+	cout << "Would you like to play again?\n";
+	cout << "Enter 'yes' for yes and 'no' for no: ";
+	string replay = "";
+	getline(cin, replay);
+	if (replay == "yes") {
+		cout << "Playing again!\n\n";
+		playGame();						//call the playGame function to restart
+	}
+	if (replay == "no") {
+		cout << "Exiting game\n";		//go back to main to return 0 and exit
+		return;
+	}
+
+	cout << "Answer not recognized\n\n";	
+	askToPlayAgain();				//re-ask the user
+	
 }
